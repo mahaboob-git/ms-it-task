@@ -16,10 +16,11 @@ const ProductCard = ({ product }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        height: 360, 
+        height: 360, // Equal height for all cards
         backgroundColor: "#fff",
       }}
     >
+      {/* Product Image */}
       <Box
         component="img"
         src={product.image}
@@ -40,7 +41,7 @@ const ProductCard = ({ product }) => {
           fontWeight: 600,
           mb: 0.5,
           textAlign: "left",
-          whiteSpace: "nowrap", 
+          whiteSpace: "nowrap",
           overflow: "hidden",
           textOverflow: "ellipsis",
         }}
@@ -48,7 +49,7 @@ const ProductCard = ({ product }) => {
         {product.name}
       </Typography>
 
-      {/* Rating with light gray background */}
+      {/* Rating */}
       <Box
         sx={{
           display: "inline-flex",
@@ -58,14 +59,22 @@ const ProductCard = ({ product }) => {
           px: 1,
           py: 0.3,
           mb: 0.5,
+          width: "fit-content",
         }}
       >
         <StarIcon sx={{ fontSize: 14, color: "#FFD700", mr: "5px" }} />
         <Typography sx={{ fontSize: 14, color: "#757575" }}>{product.rating}</Typography>
       </Box>
 
+      {/* Starts at */}
       <Typography
-        sx={{ fontSize: 14, fontWeight: 400, color: "#acacacff", textAlign: "left", mb: 0.5 }}
+        sx={{
+          fontSize: 14,
+          fontWeight: 400,
+          color: "#acacacff",
+          textAlign: "left",
+          mb: 0.25,
+        }}
       >
         Starts at
       </Typography>
